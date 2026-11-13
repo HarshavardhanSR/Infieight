@@ -23,113 +23,132 @@ export default function HomePage() {
         </div>
         <div className="hero-grain" aria-hidden="true" />
         <HeroWaterTrail />
-        <div className="home-hero-container container-shell relative z-10 flex flex-col justify-between py-12 sm:py-16 lg:py-20">
-          <div className="home-hero-main grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(260px,0.75fr)] lg:items-end">
+        <div className="home-hero-container container-shell relative z-10 flex min-h-[100svh] flex-col justify-between py-12 sm:py-16 lg:py-20">
+          <div className="home-hero-main grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] lg:items-end">
             <div className="home-hero-heading-group">
-              <div className="hero-status-badge inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 backdrop-blur-md">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md shadow-sm transition hover:border-white/30 hover:bg-white/15">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d8b4fe] opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#c084fc]"></span>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                 </span>
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-white/90">
-                  Independent Digital Studio · India &amp; Beyond
-                </span>
-                <span className="hidden sm:inline text-white/30">/</span>
-                <span className="hidden sm:inline text-xs font-medium tracking-wider text-white/70">
-                  Available for Q2 Projects
+                <span className="text-[10.5px] font-semibold tracking-[0.18em] uppercase text-white/90 sm:text-xs">
+                  DIGITAL STUDIO · CRAFTING NEXT-GEN EXPERIENCES &amp; SYSTEMS
                 </span>
               </div>
 
-              <h1 className="home-hero-title display-heading mt-6 font-semibold uppercase leading-[0.92]">
-                <span className="hero-title-line">Digital that</span>
-                <span className="hero-title-line">moves you</span>
-                <span className="hero-title-line text-gradient-accent">forward<span className="text-[#c084fc]">.</span></span>
+              <h1 className="home-hero-title display-heading mt-6 font-bold uppercase tracking-[-0.04em] text-white">
+                <span className="hero-title-line">DIGITAL THAT</span>
+                <span className="hero-title-line bg-gradient-to-r from-white via-purple-100 to-[#d8b4fe] bg-clip-text text-transparent">
+                  MOVES YOU
+                </span>
+                <span className="hero-title-line">
+                  FORWARD<span className="text-[#c084fc]">.</span>
+                </span>
               </h1>
+            </div>
 
-              <p className="hero-copy-description mt-6 max-w-xl text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-white/80">
-                We engineer high-performance digital platforms, category-defining brand identities, and transformative technologies for businesses ready to make their next move.
+            <div className="hero-copy flex flex-col justify-end gap-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:gap-7 sm:p-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+              <div className="flex items-center justify-between border-b border-white/20 pb-3">
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#e4b7ff]">
+                  01 / 06 · Studio Focus
+                </span>
+                <span className="text-xs font-medium tracking-widest uppercase text-white/50">
+                  Design &amp; Technology
+                </span>
+              </div>
+
+              <p className="hero-copy-description text-base sm:text-lg lg:text-[1.125rem] font-normal leading-relaxed text-white/85">
+                We engineer high-performance digital platforms, category-defining brand identities,
+                and connected technologies for ambitious businesses ready to make their next move.
               </p>
 
-              <div className="hero-actions mt-8 flex flex-wrap items-center gap-4">
+              <div className="hero-cta-group flex flex-wrap items-center gap-3.5 pt-1">
                 <Link
                   href="/contact"
-                  className="hero-primary-btn group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm sm:text-base font-semibold text-[#140b22] transition-all hover:bg-[#f3e8ff] hover:shadow-[0_0_30px_rgba(192,132,252,0.35)]"
+                  className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm sm:text-base font-semibold text-[#100b18] shadow-lg shadow-black/20 transition-all duration-300 hover:bg-[#f5eaff] hover:shadow-xl hover:shadow-purple-900/30 hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span>Tell us what you&apos;re building</span>
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#140b22] text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    <ArrowIcon />
+                  <span>Start a Conversation</span>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#100b18] text-white transition-all duration-300 group-hover:bg-[#34164b] group-hover:scale-105">
+                    <span className="block h-3.5 w-3.5 -rotate-45 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      <ArrowIcon />
+                    </span>
                   </span>
                 </Link>
                 <Link
                   href="/work"
-                  className="hero-secondary-btn inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-6 py-3.5 text-sm sm:text-base font-semibold text-white backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/10"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm sm:text-base font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <span>Explore selected work</span>
-                  <span aria-hidden="true">→</span>
+                  <span>Explore Our Work</span>
+                  <span
+                    aria-hidden="true"
+                    className="text-white/60 transition-transform duration-300 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </Link>
               </div>
-            </div>
 
-            <div className="hero-capability-card hidden lg:flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Core Disciplines</span>
-                <span className="text-xs font-semibold text-[#c084fc]">01 / 04</span>
-              </div>
-              <ul className="my-5 space-y-3 text-sm font-medium text-white/85">
-                <li className="flex items-center justify-between">
-                  <span>01. Strategy &amp; Architecture</span>
-                  <span className="text-white/40">↗</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span>02. Design Systems &amp; UX</span>
-                  <span className="text-white/40">↗</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span>03. Next-Gen Engineering</span>
-                  <span className="text-white/40">↗</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span>04. Growth &amp; Intelligence</span>
-                  <span className="text-white/40">↗</span>
-                </li>
-              </ul>
-              <div className="border-t border-white/10 pt-4">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#d8b4fe] hover:text-white transition-colors"
-                >
-                  <span>View all capabilities</span>
-                  <span aria-hidden="true">→</span>
-                </Link>
+              <div className="flex flex-wrap items-center gap-2 border-t border-white/10 pt-3">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-white/40 mr-1">
+                  Disciplines:
+                </span>
+                {["Digital Platforms", "Design Systems", "Connected Tech", "Brand Strategy"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="hero-metrics-bar mt-12 w-full rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6 backdrop-blur-xl">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
-              <div className="hero-metric-item">
-                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-white">99.4%</span>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">
+          <div className="home-hero-metrics mt-12 w-full pt-6 sm:mt-16 sm:pt-8 lg:mt-20">
+            <div className="grid grid-cols-2 gap-4 rounded-2xl border border-white/15 bg-white/[0.04] p-5 backdrop-blur-md sm:grid-cols-4 sm:gap-6 sm:p-6 lg:rounded-3xl lg:p-7">
+              <div className="flex flex-col border-white/10 pl-2 sm:border-l sm:pl-6 sm:first:border-l-0 sm:first:pl-2">
+                <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                  99.4%
+                </span>
+                <span className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
                   Delivery Precision
-                </p>
+                </span>
+                <span className="mt-0.5 text-[11px] text-white/50">
+                  On-time &amp; on-scope execution
+                </span>
               </div>
-              <div className="hero-metric-item border-l border-white/10 pl-6">
-                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-white">3.5×</span>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">
-                  Avg. Value Growth
-                </p>
+              <div className="flex flex-col border-l border-white/10 pl-4 sm:pl-6">
+                <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                  3.5×
+                </span>
+                <span className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
+                  Average Client Growth
+                </span>
+                <span className="mt-0.5 text-[11px] text-white/50">
+                  Proven post-launch scale
+                </span>
               </div>
-              <div className="hero-metric-item border-l border-white/10 pl-6">
-                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-white">100%</span>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">
-                  Bespoke Systems
-                </p>
+              <div className="flex flex-col border-white/10 pl-2 max-sm:border-t max-sm:pt-4 sm:border-l sm:pl-6">
+                <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                  100%
+                </span>
+                <span className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
+                  Bespoke Architecture
+                </span>
+                <span className="mt-0.5 text-[11px] text-white/50">
+                  Zero generic templates
+                </span>
               </div>
-              <div className="hero-metric-item border-l border-white/10 pl-6">
-                <span className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Global</span>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">
+              <div className="flex flex-col border-l border-white/10 pl-4 max-sm:border-t max-sm:pt-4 sm:pl-6">
+                <span className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+                  Global
+                </span>
+                <span className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">
                   India, Australia &amp; Beyond
-                </p>
+                </span>
+                <span className="mt-0.5 text-[11px] text-white/50">
+                  Distributed studio delivery
+                </span>
               </div>
             </div>
           </div>
