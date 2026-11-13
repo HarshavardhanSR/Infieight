@@ -38,7 +38,7 @@ export default function PartnersPage() {
         <section className="container-shell grid gap-10 py-16 sm:py-24 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
           <div>
             <p className="section-label text-[#765097]">The right people, together</p>
-            <h2 className="display-heading mt-5 text-4xl font-medium leading-tight sm:text-5xl">
+            <h2 className="display-heading responsive-section-heading mt-5 text-4xl font-medium leading-tight sm:text-5xl">
               Collaboration should make the work stronger.
             </h2>
           </div>

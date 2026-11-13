@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="container-shell grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
             <div>
               <p className="section-label text-[#d3a6ff]">How we work</p>
-              <h2 className="display-heading mt-5 text-4xl font-medium leading-tight sm:text-5xl">
+              <h2 className="display-heading responsive-section-heading mt-5 text-4xl font-medium leading-tight sm:text-5xl">
                 Make the next move together.
               </h2>
             </div>

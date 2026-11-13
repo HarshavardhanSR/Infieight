@@ -36,7 +36,6 @@ export function PageHero({
             <p className="section-label page-hero-label">{label}</p>
             <h1 className="display-heading page-hero-title">{title}</h1>
           </div>
-          <span className="page-hero-image-label">INFIEIGHT / DIGITAL STUDIO</span>
         </div>
       </div>
       <StudioMarquee

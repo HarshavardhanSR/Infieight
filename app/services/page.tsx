@@ -18,7 +18,7 @@ export default function ServicesPage() {
         <section aria-label="All services" className="container-shell services-overview">
           <div className="services-overview-intro">
             <p className="section-label text-[#765097]">One connected practice</p>
-            <h2 className="display-heading">
+            <h2 className="display-heading responsive-section-heading">
               Everything you need to move the work forward.
             </h2>
             <p>
