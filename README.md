@@ -1,36 +1,18 @@
-# Infieight
+# INFIEIGHT
 
-INFIEIGHT is a premium digital services platform for website, software, AI, and design work. This repository contains the Next.js application for the public marketing site, service packages, pricing, contact flow, and Razorpay-ready checkout.
-
-## Features
-- Premium landing page and service positioning
-- Services and pricing pages
-- Project showcase packages with custom quote CTA
-- Contact inquiry page
-- Checkout flow with Razorpay-ready order creation API
-- Responsive Next.js App Router frontend
+INFIEIGHT is a responsive digital studio website built with Next.js, React, and TypeScript.
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open http://localhost:3000 to view the app.
+Open http://localhost:3000.
 
-## Production note
-Set the Razorpay environment values before enabling live payments:
+## Deploy to GitHub Pages
 
-```bash
-RAZORPAY_KEY_ID=your_key_id
-RAZORPAY_KEY_SECRET=your_key_secret
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
+Pushing to `main` runs the GitHub Actions workflow in `.github/workflows/deploy-pages.yml`. It lints the project, builds a static export, and deploys the `out` directory to GitHub Pages.
 
-## Tech stack
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Razorpay
+The project site is published at https://harshavardhansr.github.io/Infieight/ after the first successful workflow run. In the repository's **Settings → Pages**, select **GitHub Actions** as the build and deployment source if it is not already selected.

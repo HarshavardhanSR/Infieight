@@ -1,79 +1,91 @@
 import Link from "next/link";
+import { PageHero } from "@/components/page-hero";
+import { services } from "@/components/service-data";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
-
-const serviceList = [
-  {
-    name: "Personal Portfolio Website",
-    blurb: "For creators, founders, and experts who need a premium digital presence without unnecessary complexity.",
-    price: "From ₹3,999",
-    highlights: ["Personal brand strategy", "Responsive showcase pages", "Lead capture and contact form"],
-    projects: ["Founder profile", "Creator portfolio", "Consultant landing page"],
-  },
-  {
-    name: "Business Website",
-    blurb: "A clear, credible corporate presence for businesses that want stronger trust and better conversion paths.",
-    price: "From ₹8,999",
-    highlights: ["Brand positioning", "Service pages and CTA flow", "WordPress style CMS-ready structure"],
-    projects: ["Marketing site", "Service-led business page", "Case study homepage"],
-  },
-  {
-    name: "AI & Product Experience",
-    blurb: "Experience design and product workflows that combine business logic with useful automation.",
-    price: "Custom scope",
-    highlights: ["AI workflow design", "Product UX prototyping", "Sales and onboarding flow design"],
-    projects: ["AI assistant demo", "Workflow dashboard", "Automation-first product UX"],
-  },
-];
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#f3f5f8] text-slate-900">
+    <>
       <SiteHeader />
-
-      <main className="container-shell py-20">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2457c5]">Services</p>
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-slate-900">Premium digital services built for trust and traction.</h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Our service model starts with the clear, high-value offers that are easiest to understand and easiest to buy.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {serviceList.map((service) => (
-            <article key={service.name} className="card-surface rounded-3xl p-6">
-              <div className="text-sm font-medium uppercase tracking-[0.18em] text-[#2457c5]">Service</div>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-900">{service.name}</h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">{service.blurb}</p>
-              <div className="mt-6 text-lg font-semibold text-[#101c35]">{service.price}</div>
-
-              <ul className="mt-6 space-y-2 text-sm text-slate-600">
-                {service.highlights.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#eef2ff] text-[#2457c5]">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 rounded-2xl bg-slate-50 p-3">
-                <div className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">Sample project types</div>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {service.projects.map((item) => (
-                    <span key={item} className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs text-slate-600">{item}</span>
-                  ))}
+      <main className="bg-[#f7f5f1] text-[#201b24]">
+        <PageHero
+          description="One focused team for the strategy, creative, and technology your next move needs."
+          image="/images/services-hero.jpg"
+          label="What we bring together"
+          marqueeMessage="From first question to final detail"
+          title="One team. Every digital move."
+        />
+        <section aria-label="All services" className="container-shell services-overview">
+          <div className="services-overview-intro">
+            <p className="section-label text-[#765097]">One connected practice</p>
+            <h2 className="display-heading">
+              Everything you need to move the work forward.
+            </h2>
+            <p>
+              Explore the full range of INFIEIGHT services in one place. Each
+              service can stand on its own or work together as one considered
+              solution.
+            </p>
+          </div>
+          <div className="services-overview-list">
+            {services.map((service) => (
+              <article
+                className="service-overview-card"
+                id={service.slug}
+                key={service.slug}
+              >
+                <div className={`service-art ${service.visual}`} aria-hidden="true">
+                  <span className="service-art-number">{service.number}</span>
+                  <span className="service-art-shape" />
+                  <span className="service-art-chip">INFIEIGHT · {service.number}</span>
                 </div>
-              </div>
-
-              <Link href="/contact" className="mt-8 inline-flex rounded-full bg-[#101c35] px-5 py-3 text-sm font-medium text-white hover:bg-slate-800">
-                Request scope
-              </Link>
-            </article>
-          ))}
-        </div>
+                <div className="service-overview-content">
+                  <div className="service-overview-heading">
+                    <p className="section-label text-[#765097]">
+                      Service {service.number}
+                    </p>
+                    <h2>{service.title}</h2>
+                  </div>
+                  <p className="service-overview-description">
+                    {service.description}
+                  </p>
+                  <p className="service-overview-detail">{service.detail}</p>
+                  <div className="service-overview-tags" aria-label="Service focus">
+                    {service.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                  <div className="service-overview-capabilities">
+                    <h3>What it can include</h3>
+                    <ul>
+                      {service.capabilities.map((capability) => (
+                        <li key={capability}>{capability}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Link className="service-overview-cta" href="/contact">
+                    Talk to us about this service <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section className="bg-[#ece7ef] py-16 sm:py-20">
+          <div className="container-shell grid gap-7 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="section-label text-[#765097]">Your next step</p>
+              <h2 className="display-heading mt-4 max-w-2xl text-4xl font-medium leading-tight sm:text-5xl">
+                Not sure which service fits? Let&apos;s figure it out together.
+              </h2>
+            </div>
+            <Link href="/contact" className="button-dark">
+              Tell us what you need <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </section>
       </main>
-
       <SiteFooter />
-    </div>
+    </>
   );
 }

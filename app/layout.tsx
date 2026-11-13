@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ChatWidget } from "@/components/chat-widget";
+import { SiteMotion } from "@/components/site-motion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "INFIEIGHT | Premium Digital Services",
+  title: "INFIEIGHT | Digital that moves you forward",
   description:
-    "INFIEIGHT creates premium websites, product experiences, and digital systems for founders, businesses, and creators.",
+    "INFIEIGHT brings strategy, design, and technology together to help businesses create a clearer digital future.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -23,8 +25,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
-      <body className="min-h-full bg-slate-50 text-slate-900">{children}</body>
+      <body className="min-h-full">
+        <SiteMotion>
+          {children}
+          <ChatWidget />
+        </SiteMotion>
+      </body>
     </html>
   );
 }
